@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		
+		#canvasGrid{
+
+			top:9px;
+			left: 9px;
+			position: absolute;
+			/*/border:solid; /*/
+			background-color: rgba(0,0,0,0);
+
+  z-index: -100;
+		}
+		body{
+
+			background-color: #000;
+		}
+
+		#myCanvas{
+			top:9px;
+			left: 9px;
+			position: absolute;
+background-color: rgba(0,0,0,0);
+z-index: 1;
+		}
+	</style>
+<script type="text/javascript">
+
+	//dibuja la cuadricula 
+	function cuadricula(sizeCuadricula,w,h,colorgrid) {
+var canvas = document.getElementById("canvasGrid");
+var ctx = canvas.getContext("2d");
+
+for (var x=0; x<=w; x=x+sizeCuadricula){
+  ctx.moveTo(x,0);
+  ctx.lineTo(x,h);
+//console.log(x+"..x,y.."+0)
+ // console.log(x+"..x,wy.."+h)
+
+
+
+}
+
+  for (var y=0; y<=h; y=y+sizeCuadricula){
+  ctx.moveTo(0,y);
+  ctx.lineTo(w,y);
+  //console.log(0+"..x,y.."+y)
+  //console.log(w+"..hx,y.."+y)
+}
+
+
+  ctx.strokeStyle = colorgrid;
+ctx.stroke();
+	}
+////fin cudricula
+
+function cudrado() {
+	var canvas1 = document.getElementById("myCanvas");
+var ctx = canvas1.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(100,100,150,75);
+}
+
+
+//funcion que renderisa	
+window.onload=function() {
+//crea el canvas 
+	function creaCanva(w,h,id,regi) {
+		var canv = document.createElement("canvas");
+		    canv.setAttribute("width",w)
+		    canv.setAttribute("height",h)
+		    canv.setAttribute("style","border:1px solid " +regi)
+		    
+		    canv.setAttribute("id",id)
+		    canv.innerHTML;
+
+		   document.body.appendChild(canv);  
+	}
+
+
+
+
+var w=window.innerWidth-22;
+var h=window.innerHeight-22;
+console.log(w+","+h)
+
+	let sizeCuadricula=10;
+	let colorgrid="#d3d3d3";
+	
+//captura las dimenciones de las ventanas cuando cambian de tamaño
+window.addEventListener("resize", function(){
+
+	w=window.innerWidth-22;
+	h=window.innerHeight-22;
+
+	     location.reload();
+});
+ 
+
+	  
+ 
+ creaCanva(w,h,"canvasGrid",colorgrid);
+ creaCanva(w,h,"myCanvas",colorgrid);
+	
+cuadricula(sizeCuadricula,w,h,colorgrid);
+cudrado()
+	 
+	
+
+
+
+}
+
+
+</script>
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+</body>
+</html>
