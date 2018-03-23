@@ -1,0 +1,22 @@
+#canvasGrid{
+
+			top:9px;
+			left: 9px;
+			position: absolute;
+			/*/border:solid; /*/
+			background-color: rgba(0,0,0,0);
+
+  z-index: -100;
+		}
+		body{
+
+			background-color: #000;
+		}
+
+		#myCanvas{
+			top:9px;
+			left: 9px;
+			position: absolute;
+background-color: rgba(0,0,0,0);
+z-index: 1;
+		}
