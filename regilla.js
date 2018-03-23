@@ -1,7 +1,7 @@
 
 /*
 *dibuja la cuadricula y capas canvas
-*@autor Claver Carrera M
+*@autor <klaveruno@gmail.com>
 */
 
 
